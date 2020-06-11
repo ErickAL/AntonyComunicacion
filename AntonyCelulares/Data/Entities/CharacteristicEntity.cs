@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AntonyCelulares.Data.Entities
 {
-    public class Caracteristica : ICaracteristica
+    public class CharacteristicEntity : ICaracteristica
     {
         public Guid Id { get; set; }
         public string Label { get; set; }

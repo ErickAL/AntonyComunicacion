@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AntonyCelulares.Data.Entities
 {
-    public class Articulo : IArticulo
+    public class ItemEntity : IArticulo
     {
         public Guid Id { get ; set;}
         public string Nombre { get; set; }

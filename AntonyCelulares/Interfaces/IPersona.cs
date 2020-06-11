@@ -7,7 +7,7 @@ namespace AntonyCelulares.Interfaces
 {
     public interface IPersona
     {
-        public Guid Id { get; set; }
+        public  string Id { get; set; }
         public string Nombre { set; get; }
         public string Apellido { set; get; }
         public string Email { get; set; }

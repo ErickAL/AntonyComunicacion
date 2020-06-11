@@ -31,12 +31,13 @@ namespace AntonyCelulares.Views.Account
         public string Direccion { get => txtDireccion.Text; set => txtDireccion.Text = value; }
         public string Telefono { get => txtTelefono.Text; set => txtTelefono.Text=value; }
        
-        public UserType Rol 
+        public UserType UserType 
         {
             get => (UserType)cbUserTypes.SelectedIndex;
             set => cbUserTypes.SelectedIndex = (int)value; 
         }
         public Image Avatar { get => pbAvatar.Image; set => pbAvatar.Image=value; }
+        string IPersona.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #endregion
         #region Contructors
@@ -48,7 +49,7 @@ namespace AntonyCelulares.Views.Account
         public RegisterUsuarioPage(IUsuario user)
         {
             InitializeComponent();
-            Id = user.Id;
+            
         }
 
         #endregion
