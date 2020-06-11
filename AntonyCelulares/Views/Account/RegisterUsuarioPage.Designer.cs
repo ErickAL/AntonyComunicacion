@@ -261,6 +261,7 @@
             this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAvatar.TabIndex = 3;
             this.pbAvatar.TabStop = false;
+            this.pbAvatar.Click += new System.EventHandler(this.pbAvatar_Click);
             // 
             // btnSave
             // 
