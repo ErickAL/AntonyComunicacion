@@ -30,7 +30,12 @@ namespace AntonyCelulares.Views.Account
         public string Documento { get => txtDocument.Text; set => txtDocument.Text=value; }
         public string Direccion { get => txtDireccion.Text; set => txtDireccion.Text = value; }
         public string Telefono { get => txtTelefono.Text; set => txtTelefono.Text=value; }
-        public UserType Rol { get; set; }
+       
+        public UserType Rol 
+        {
+            get => (UserType)cbUserTypes.SelectedIndex;
+            set => cbUserTypes.SelectedIndex = (int)value; 
+        }
         public Image Avatar { get => pbAvatar.Image; set => pbAvatar.Image=value; }
 
         #endregion
@@ -40,15 +45,23 @@ namespace AntonyCelulares.Views.Account
             InitializeComponent();
             Id = Guid.Empty;
         }
-        public RegisterUsuarioPage(Guid id)
+        public RegisterUsuarioPage(IUsuario user)
         {
             InitializeComponent();
-            Id = id;
+            Id = user.Id;
         }
 
         #endregion
 
         #region Methods
+
+        private void btnSearchImage_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog.ShowDialog(this)== DialogResult.OK)
+            {
+                Avatar = Bitmap.FromFile(openFileDialog.FileName);          
+            }
+        } 
 
         #endregion
     }

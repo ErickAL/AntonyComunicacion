@@ -5,6 +5,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Account\ListaUsuarioPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Account\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>

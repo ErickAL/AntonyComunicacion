@@ -6,9 +6,10 @@ namespace AntonyCelulares.Enums
 {
     public enum UserType
     {
-        Admin=1,
+        None,
+        Admin,
         Register,
-        Cashier
-
+        Cashier,
+        
     }
 }
