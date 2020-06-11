@@ -23,12 +23,18 @@ namespace AntonyCelulares.Views.Shared
             InitializeComponent();
             Images = new List<Image>();
             Images.Add(image);
-           
+            cargarMedias();
+        }
+        public ImageViewerPage(ICollection<Image> image)
+        {
+            InitializeComponent();
+            Images = image;
             cargarMedias();
         }
 
         private void cargarMedias()
         {
+            
             SelectedImage = Images.FirstOrDefault();
             foreach (var item in Images)
             {
@@ -41,7 +47,7 @@ namespace AntonyCelulares.Views.Shared
                 pictureBox.TabStop = false;
                 pictureBox.Click += new System.EventHandler(this.ImageViewer_Click);
                 this.MediaPanel.Controls.Add(pictureBox);
-                pictureBox.Show();
+                //pictureBox.Show();
             }
            
 
@@ -55,6 +61,11 @@ namespace AntonyCelulares.Views.Shared
                 SelectedImage = pictureBox.Image; 
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

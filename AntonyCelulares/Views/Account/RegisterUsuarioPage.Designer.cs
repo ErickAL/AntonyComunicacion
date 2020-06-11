@@ -307,8 +307,8 @@
             // 
             this.openFileDialog.FileName = "foto de perfil";
             this.openFileDialog.Filter = "*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            this.openFileDialog.Multiselect = true;
             this.openFileDialog.RestoreDirectory = true;
-            this.openFileDialog.ShowHelp = true;
             this.openFileDialog.Title = "Seleccionar Avatar";
             // 
             // RegisterUsuarioPage

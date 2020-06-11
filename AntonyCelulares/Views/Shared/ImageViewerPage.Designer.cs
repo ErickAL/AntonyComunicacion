@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ImageViewer = new System.Windows.Forms.PictureBox();
             this.MediaPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ImageViewer = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImageViewer)).BeginInit();
-            this.MediaPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MediaPanel
+            // 
+            this.MediaPanel.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.MediaPanel.AllowDrop = true;
+            this.MediaPanel.AutoScroll = true;
+            this.MediaPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.MediaPanel.BackColor = System.Drawing.Color.Transparent;
+            this.MediaPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MediaPanel.Location = new System.Drawing.Point(0, 340);
+            this.MediaPanel.Name = "MediaPanel";
+            this.MediaPanel.Size = new System.Drawing.Size(800, 110);
+            this.MediaPanel.TabIndex = 1;
             // 
             // ImageViewer
             // 
+            this.ImageViewer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ImageViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImageViewer.Location = new System.Drawing.Point(0, 0);
             this.ImageViewer.Name = "ImageViewer";
@@ -46,38 +58,40 @@
             this.ImageViewer.TabIndex = 0;
             this.ImageViewer.TabStop = false;
             // 
-            // MediaPanel
+            // button1
             // 
-            this.MediaPanel.Controls.Add(this.pictureBox1);
-            this.MediaPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MediaPanel.Location = new System.Drawing.Point(0, 367);
-            this.MediaPanel.Name = "MediaPanel";
-            this.MediaPanel.Size = new System.Drawing.Size(800, 83);
-            this.MediaPanel.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoEllipsis = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.DarkViolet;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(741, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ImageViewerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.MediaPanel);
             this.Controls.Add(this.ImageViewer);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImageViewerPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImageViewerPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ImageViewer)).EndInit();
-            this.MediaPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -86,6 +100,6 @@
 
         private System.Windows.Forms.PictureBox ImageViewer;
         private System.Windows.Forms.FlowLayoutPanel MediaPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

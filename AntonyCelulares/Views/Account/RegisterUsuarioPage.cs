@@ -2,6 +2,7 @@
 using AntonyCelulares.Interfaces;
 using AntonyCelulares.Views.Shared;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -53,11 +54,23 @@ namespace AntonyCelulares.Views.Account
 
         #region Methods
 
-        private void btnSearchImage_Click(object sender, EventArgs e)
+        private async void btnSearchImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 Avatar = Bitmap.FromFile(openFileDialog.FileName);
+               /* if(openFileDialog.FileNames.Length>1)
+                {
+                   
+                    List<Image> images = new List<Image>();
+                    foreach (var item in openFileDialog.FileNames)
+                    {
+                        images.Add(Bitmap.FromFile(item));
+                    }
+                    var imageViewer = new ImageViewerPage(images);
+                    imageViewer.Show();
+                    
+                }*/
             }
         }
 
