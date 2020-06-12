@@ -1,9 +1,5 @@
 using AntonyCelulares.Data;
-using AntonyCelulares.Data.Entities;
-using AntonyCelulares.Helpers;
-using AntonyCelulares.Interfaces;
 using AntonyCelulares.Views.Account;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +7,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Configuration;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace AntonyCelulares
@@ -36,11 +31,11 @@ namespace AntonyCelulares
             IServiceCollection services = new ServiceCollection();
             IConfiguration configuration;
 
-            var host = Host.CreateDefaultBuilder()
+            IHost host = Host.CreateDefaultBuilder()
              .ConfigureAppConfiguration((context, builder) =>
              {
                  // Add other configuration files...
-                 builder.AddJsonFile("appsettings.json", optional: true);
+                 builder.AddJsonFile("config.json", optional: true);
              })
              .ConfigureServices((context, _services) =>
              {
@@ -51,10 +46,14 @@ namespace AntonyCelulares
              .ConfigureLogging(logging =>
              {
                  // Add other loggers...
+                 logging.AddConfiguration();
+                 logging.AddConsole();
+                 /*services.AddLogging(configure => configure.AddConsole());
+                 services.AddLogging(configure => configure.AddConfiguration());*/
              })
              .Build();
 
-            
+
 
             //ConfigureServices(configuration, services);
 
@@ -72,25 +71,24 @@ namespace AntonyCelulares
         private static void ConfigureServices(IConfiguration configuration, IServiceCollection services)
         {
             #region Helpers
-            services.AddScoped<IUserHelper, UserHelper>();
             #endregion
             #region Views
-            services.AddScoped<Form1>();
+            services.AddSingleton<Form1>();
             //Account
-            services.AddScoped<ListaUsuarioPage>();
-            services.AddScoped<RegisterUsuarioPage>();
-            services.AddScoped<LoginPage>();
+            services.AddTransient<ListaUsuarioPage>();
+            services.AddTransient<RegisterUsuarioPage>();
+            services.AddTransient<LoginPage>();
             #endregion
             /**/
-            services.AddLogging(configure => configure.AddConsole());
-            services.AddLogging(configure => configure.AddConfiguration());
+
 
             //DataContext injection
-            services.AddDbContext<DataContext>(cfg =>
-            {
-                cfg.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-            }); 
+            services.AddDbContext<DataContext>();
 
+            using( var db=new DataContext())
+            {
+               var l= db.Usuarios.ToListAsync();
+            }
 
 
         }

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace AntonyCelulares.Data.Entities
 {
-    public class CharacteristicEntity : ICaracteristica
+    public class CharacteristicEntity //: ICaracteristica
     {
         public Guid Id { get; set; }
         public string Label { get; set; }
         public string Value { get; set; }
-        public ICollection<IArticulo> Articulos { get; set; }
+        public ICollection<ItemEntity> Articulos { get; set; }
     }
 }

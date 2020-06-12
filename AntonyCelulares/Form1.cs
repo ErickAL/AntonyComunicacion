@@ -1,18 +1,18 @@
-﻿using AntonyCelulares.Views.Account;
+﻿using AntonyCelulares.Interfaces;
+using AntonyCelulares.Views.Account;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AntonyCelulares
 {
     public partial class Form1 : Form
     {
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -30,8 +30,8 @@ namespace AntonyCelulares
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new RegisterUsuarioPage();
-            form.Show();
+           RegisterUsuarioPage form = new RegisterUsuarioPage();
+           form.Show();
         }
     }
 }

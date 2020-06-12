@@ -67,7 +67,6 @@ D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcor
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\obj\Debug\netcoreapp3.1\AntonyCelulares.csproj.CoreCompileInputs.cache
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Abstractions.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -85,3 +84,5 @@ D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcor
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.Extensions.ObjectPool.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.Extensions.WebEncoders.dll
 D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.Net.Http.Headers.dll
+D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Code Repository\.Net core\AntonyComunicacion\AntonyCelulares\obj\Debug\netcoreapp3.1\AntonyCelulares.csproj.CoreCompileInputs.cache
