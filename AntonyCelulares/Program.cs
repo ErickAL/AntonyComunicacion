@@ -1,4 +1,5 @@
 using AntonyCelulares.Data;
+using AntonyCelulares.Helpers;
 using AntonyCelulares.Views.Account;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -70,8 +71,7 @@ namespace AntonyCelulares
         /// <param name="services"></param>
         private static void ConfigureServices(IConfiguration configuration, IServiceCollection services)
         {
-            #region Helpers
-            #endregion
+           
             #region Views
             services.AddSingleton<Form1>();
             //Account
@@ -80,15 +80,15 @@ namespace AntonyCelulares
             services.AddTransient<LoginPage>();
             #endregion
             /**/
-
-
             //DataContext injection
             services.AddDbContext<DataContext>();
 
-            using( var db=new DataContext())
-            {
-               var l= db.Usuarios.ToListAsync();
-            }
+           
+            #region Helpers
+            #endregion
+            
+
+           
 
 
         }

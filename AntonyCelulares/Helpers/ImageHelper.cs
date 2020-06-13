@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AntonyCelulares.Helpers
 {
-    public class ImageHelper:IImageHelper
+    public class ImageHelper 
     {
 
         //convert image to bytearray
-        public byte[] ImageToByteArray(Image img)
+        public static byte[] ImageToByteArray(Image img)
         {
             using (MemoryStream mStream = new MemoryStream())
             {
@@ -20,7 +20,7 @@ namespace AntonyCelulares.Helpers
             }
         }
         //convert bytearray to image
-        public Image ByteArrayToImage(byte[] byteArrayIn)
+        public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
             using (MemoryStream mStream = new MemoryStream(byteArrayIn))
             {
