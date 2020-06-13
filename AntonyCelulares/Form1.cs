@@ -12,12 +12,12 @@ namespace AntonyCelulares
 {
     public partial class Form1 : Form
     {
+        private readonly IServiceProvider service;
 
-
-
-        public Form1()
+        public Form1(IServiceProvider service)
         {
             InitializeComponent();
+            this.service = service;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -32,8 +32,8 @@ namespace AntonyCelulares
 
         private void button1_Click(object sender, EventArgs e)
         {
-           RegisterUsuarioPage form = new RegisterUsuarioPage();
-           form.Show();
+           RegisterUsuarioPage form = service.GetRequiredService<RegisterUsuarioPage>();
+            form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

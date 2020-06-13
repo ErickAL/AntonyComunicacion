@@ -4,6 +4,7 @@ using AntonyCelulares.Enums;
 using AntonyCelulares.Helpers;
 using AntonyCelulares.Interfaces;
 using AntonyCelulares.Views.Shared;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace AntonyCelulares.Views.Account
 
         #region Properties   
         private bool IsUpdating { get; set; }
+        public UserManager UserManager => _services.GetRequiredService<UserManager>();
         public Guid Id { get; set; }
         public string Email
         {
@@ -44,10 +46,11 @@ namespace AntonyCelulares.Views.Account
 
         public ImagenEntity ImagenEntity
         {
-            get => _imagenEntity ?? (_imagenEntity=new ImagenEntity { Data=ImageHelper.ImageToByteArray(Avatar) });
-            set{
+            get => _imagenEntity ?? (_imagenEntity = new ImagenEntity { Data = ImageHelper.ImageToByteArray(Avatar) });
+            set
+            {
                 _imagenEntity = value;
-                Avatar=ImageHelper.ByteArrayToImage(value.Data);
+                Avatar = ImageHelper.ByteArrayToImage(value.Data);
             }
         }
 
@@ -56,13 +59,14 @@ namespace AntonyCelulares.Views.Account
         {
             get => pbAvatar.Image;
             set
-            { 
+            {
                 pbAvatar.Image = value;
                 ImagenEntity.Data = ImageHelper.ImageToByteArray(value);
             }
         }
 
         private UserEntity _user;
+        private readonly IServiceProvider _services;
 
         public UserEntity User
         {
@@ -103,16 +107,19 @@ namespace AntonyCelulares.Views.Account
 
         #endregion
         #region Contructors
-        public RegisterUsuarioPage()
+        public RegisterUsuarioPage(IServiceProvider services)
         {
             InitializeComponent();
             Id = Guid.Empty;
             IsUpdating = false;
+            _services = services;
         }
         public RegisterUsuarioPage(
+            IServiceProvider services,
             UserEntity user)
         {
             InitializeComponent();
+            _services = services;
             User = user;
             IsUpdating = true;
 
@@ -162,7 +169,18 @@ namespace AntonyCelulares.Views.Account
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            
+            Models.Result result = await UserManager.InsertOrUpdateAsync(User);
+            if (result.IsSuccess)
+            {
+                User =(UserEntity) result.Data;
+                MessageBox.Show(result.Message);
+
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+
 
         }
         #endregion

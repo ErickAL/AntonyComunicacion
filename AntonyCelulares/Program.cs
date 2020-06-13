@@ -1,3 +1,4 @@
+using AntonyCelulares.Controllers;
 using AntonyCelulares.Data;
 using AntonyCelulares.Helpers;
 using AntonyCelulares.Views.Account;
@@ -78,6 +79,7 @@ namespace AntonyCelulares
             services.AddTransient<ListaUsuarioPage>();
             services.AddTransient<RegisterUsuarioPage>();
             services.AddTransient<LoginPage>();
+            services.AddTransient<UserManager>();
             #endregion
             /**/
             //DataContext injection

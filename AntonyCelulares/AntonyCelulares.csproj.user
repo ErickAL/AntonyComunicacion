@@ -17,5 +17,8 @@
     <Compile Update="Views\Shared\ImageViewerPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Shared\Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

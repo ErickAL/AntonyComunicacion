@@ -2,6 +2,7 @@
 using AntonyCelulares.Data.Entities;
 using AntonyCelulares.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace AntonyCelulares.Controllers
 {
-    public class UsuariosController
+    public class UserManager
     {
         private readonly DataContext _context;
 
-        public UsuariosController(DataContext context)
+        public UserManager(IServiceProvider service)
         {
-            _context = context;
+            _context = service.GetRequiredService<DataContext>();
         }
         public async Task<Result> GetAsync()
         {

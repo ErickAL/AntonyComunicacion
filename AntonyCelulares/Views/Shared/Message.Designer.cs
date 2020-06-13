@@ -1,6 +1,6 @@
-﻿namespace AntonyCelulares.Views.Account
+﻿namespace AntonyCelulares.Views.Shared
 {
-    partial class ListaUsuarioPage
+    partial class Message
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.SuspendLayout();
-            // 
-            // ListaUsuarioPage
-            // 
-            this.ClientSize = new System.Drawing.Size(861, 524);
-            this.Name = "ListaUsuarioPage";
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Message";
         }
 
-
         #endregion
-
-        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
